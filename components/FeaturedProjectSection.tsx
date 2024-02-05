@@ -31,7 +31,7 @@ const FeaturedProjectSection = ({
       } ${lastProjet ? "pb-48" : ""}`}
     >
       <div
-        className={`w-full max-w-screen-2xl flex justify-center gap-40 items-center max-tablet:flex-col max-tablet:gap-10 ${
+        className={`w-full max-w-screen-xl flex justify-center gap-40 items-center max-tablet:flex-col max-tablet:gap-10 ${
           imageOrientation === "left" ? "" : "flex-row-reverse"
         }`}
       >
@@ -53,7 +53,7 @@ const FeaturedProjectSection = ({
             height={565}
             className="rounded-tl-md rounded-tr-[100px] rounded-bl-md rounded-br-md shadow-2xl"
           />
-          <span className="text-white opacity-10 text-[200px] font-extrabold absolute -bottom-12 left-0 leading-none">
+          <span className="text-white opacity-10 text-[200px] font-extrabold absolute -bottom-12 left-0 leading-none max-mobile:text-[100px]">
             {projectNum}
           </span>
         </div>
@@ -68,7 +68,7 @@ const FeaturedProjectSection = ({
           data-aos-once="false"
           data-aos-anchor-placement="top-bottom"
         >
-          <h2 className="text-white opacity-80 font-bold montserrat text-3xl">
+          <h2 className="text-white opacity-80 font-bold montserrat text-3xl max-mobile:text-xl">
             {title}
           </h2>
           <p className="text-white text-sm montserrat font-light opacity-80">

@@ -33,7 +33,7 @@ const FeaturesCarousel = () => {
         {Features.map((feature, index) => (
           <SwiperSlide key={feature.title}>
             <div
-              className="w-full max-w-[90%] py-2 m-auto"
+              className="w-full max-w-[90%] py-2 m-auto max-mobile:max-w-[94%]"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay={(index + 1) * 200}

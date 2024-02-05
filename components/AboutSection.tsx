@@ -6,7 +6,7 @@ import LinkArrow from "./LinkArrow";
 
 const AboutSection = () => {
   return (
-    <div className="py-24 w-screen h-screen max-tablet:w-full max-tablet:h-auto">
+    <div className="py-24 w-screen min-h-screen max-tablet:w-full max-tablet:h-auto">
       <div className="max-w-7xl m-auto max-tablet:px-11">
         <HeadingSection
           title="Quelque mots à propos MMO"

@@ -7,14 +7,14 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 z-[40] w-full h-[100px] bg-transparent flex justify-between items-center px-10 md:px-20">
       <div
-        className="flex flex-col items-center gap-5 fixed top-[120px] right-[4%] max-tablet:hidden"
+        className="flex flex-col items-center gap-5 fixed top-[120px] right-[20px] max-tablet:hidden"
         data-aos="fade-up"
         data-aos-duration="1000"
         data-aos-offset="0"
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="top-bottom"
       >
         <span className="h-[96px] w-[2px] bg-white opacity-20"></span>
         {Socials.map((social) => (
@@ -29,14 +29,14 @@ const Navbar = () => {
         <span className="h-[96px] w-[2px] bg-white opacity-20"></span>
       </div>
       <div
-        className="flex flex-col items-center gap-5 fixed bottom-[80px] left-[-1%] max-tablet:hidden"
+        className="flex flex-col items-center gap-5 fixed bottom-[80px] left-[-60px] max-tablet:hidden"
         data-aos="fade-down"
         data-aos-duration="1000"
         data-aos-offset="0"
         data-aos-easing="ease-in-out"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top-center"
+        data-aos-anchor-placement="top-bottom"
       >
         <span className="h-[96px] w-[2px] bg-white opacity-20 transform translate-x-1"></span>
         <Link

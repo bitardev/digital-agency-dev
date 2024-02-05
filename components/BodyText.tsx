@@ -5,7 +5,7 @@ interface Props {
 const BodyText = ({ text }: Props) => {
   return (
     <div
-      className="text-white text-lg font-normal opacity-70"
+      className="text-white text-lg font-normal opacity-70 max-mobile:text-sm"
       data-aos="fade-down"
       data-aos-offset="200"
       data-aos-delay="100"

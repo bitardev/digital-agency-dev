@@ -22,7 +22,7 @@ const ScrollTopBtn = () => {
   return (
     <div
       onClick={goToTop}
-      className="fixed bottom-8 right-14 mix-blend-difference z-[10]"
+      className="fixed bottom-8 right-14 mix-blend-difference z-[10] max-desktop:right-3"
     >
       {showTopBtn && (
         <div className="group/scrollToTop cursor-pointer flex justify-center items-center w-11 h-11 rounded-md hover:bg-[rgba(255,255,255,0.1)] transition-colors">

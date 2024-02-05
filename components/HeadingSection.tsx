@@ -11,7 +11,7 @@ const HeadingSection = ({ title, subtitle }: Props) => {
       className="flex flex-col gap-4"
     >
       <h3
-        className="text-white text-3xl font-bold montserrat"
+        className="text-white text-3xl font-bold montserrat max-mobile:text-xl"
         data-aos="fade-right"
         data-aos-offset="200"
         data-aos-delay="100"
@@ -24,7 +24,7 @@ const HeadingSection = ({ title, subtitle }: Props) => {
         {title}
       </h3>
       <p
-        className="text-white text-xl font-light montserrat max-tablet:text-lg"
+        className="text-white text-xl font-light montserrat max-tablet:text-lg max-mobile:text-sm"
         data-aos="fade-right"
         data-aos-offset="200"
         data-aos-delay="150"

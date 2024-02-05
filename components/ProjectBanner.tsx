@@ -11,7 +11,7 @@ const ProjectBanner = () => {
         style={{
           backgroundImage: "url(/banner2.webp)",
         }}
-        className="w-full max-w-7xl m-auto h-[262px] shadow-2xl bg-no-repeat rounded-[50px] bg-cover flex justify-between items-center px-14 max-tablet:h-auto max-tablet:flex-col-reverse max-tablet:pt-5 max-tablet:pb-8"
+        className="w-full max-w-7xl m-auto h-[262px] shadow-2xl bg-no-repeat rounded-[50px] bg-cover flex justify-between items-center px-14 max-tablet:h-auto max-tablet:flex-col-reverse max-tablet:pt-5 max-tablet:pb-8 max-mobile:px-4"
         data-aos="zoom-out"
         data-aos-offset="200"
         data-aos-delay="50"
@@ -26,7 +26,7 @@ const ProjectBanner = () => {
             Nous aidons les entreprises à atteindre leurs objectifs et à
             résoudre leurs problèmes.
           </h3>
-          <div className="flex items-center justify-start gap-4 w-full max-tablet:justify-center max-tablet:py-2">
+          <div className="flex items-center justify-start gap-4 w-full max-tablet:justify-center max-tablet:py-2 max-mobile:flex-col">
             <ButtonSolid url="/projets" text="Afficher toutes les projets" />
             <ButtonOutline url="/contact" text="Contactez-nous" />
           </div>

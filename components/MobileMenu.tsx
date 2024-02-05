@@ -18,16 +18,16 @@ const MobileMenu = ({ path }: Props) => {
       <button
         onClick={toggleMenu}
         title="Menu"
-        className="text-white hover:opacity-80 transition-opacity mix-blend-difference"
+        className="text-white hover:opacity-80 transition-opacity mix-blend-difference pt-2"
       >
-        <CiMenuFries size={40} color="white" />
+        <CiMenuFries size={35} color="white" />
       </button>
       <div
         className={`w-screen h-screen flex flex-col items-center justify-center bg-blue-500 fixed -top-5 z-10 left-0 transition-all duration-300 ease-in-out transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="absolute right-8 top-5 flex justify-end items-center gap-5">
+        <div className="absolute right-4 top-5 flex justify-end items-center gap-5">
           <button
             type="button"
             title="light mode"
@@ -57,13 +57,13 @@ const MobileMenu = ({ path }: Props) => {
           </button>
         </div>
         <div className="">
-          <ul className="space-y-2 flex flex-col gap-10 items-center justify-center">
+          <ul className="space-y-2 flex flex-col gap-10 items-center justify-center max-mobile:gap-5">
             {NavLinks.map((nav) => (
               <li key={nav.name}>
                 <Link
                   href={nav.link}
                   onClick={toggleMenu}
-                  className={`uppercase text-5xl tracking-wide montserrat ${
+                  className={`uppercase text-5xl tracking-wide montserrat max-mobile:text-3xl ${
                     path === nav.name
                       ? "text-white font-bold"
                       : "text-gray-100 font-extralight"
@@ -87,7 +87,7 @@ const MobileMenu = ({ path }: Props) => {
           </ul>
         </div>
         <div>
-          <div className="flex justify-center items-center gap-10 absolute bottom-6 w-full left-0">
+          <div className="flex justify-center items-center gap-10 absolute bottom-6 w-full left-0 max-mobile:gap-6">
             {Socials.map((social) => (
               <Image
                 key={social.name}

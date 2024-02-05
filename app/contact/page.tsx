@@ -147,7 +147,7 @@ const page = () => {
               </form>
             </div>
           </div>
-          <div className="w-full h-full border-[1px] border-blue-500 rounded-xl px-11 flex flex-col gap-6 py-12 max-w-[40%] max-tablet:max-w-full max-tablet:mt-11">
+          <div className="w-full h-full border-[1px] border-blue-500 rounded-xl px-11 flex flex-col gap-6 py-12 max-w-[40%] max-tablet:max-w-full max-tablet:mt-11 max-mobile:px-4 max-mobile:py-6">
             <span className="text-white font-bold monteserrat text-4xl">
               Dites Hello!
             </span>
@@ -159,7 +159,7 @@ const page = () => {
             <span className="text-white font-bold monteserrat text-xl">
               Demandes de renseignements
             </span>
-            <div className="grid grid-cols-2 text-white montserrat text-md font-light gap-7">
+            <div className="grid grid-cols-2 text-white montserrat text-md font-light gap-7 max-mobile:grid-cols-none max-mobile:gap-4">
               <Link
                 href="mailto:devis@mmo.agency"
                 className="opacity-80 hover:opacity-100"
@@ -173,7 +173,7 @@ const page = () => {
                 contact@mmo.agency
               </Link>
             </div>
-            <div className="grid grid-cols-2 text-white montserrat text-md font-light gap-7">
+            <div className="grid grid-cols-2 text-white montserrat text-md font-light gap-7 max-mobile:grid-cols-none max-mobile:gap-4">
               <div className="flex justify-start items-center gap-4">
                 {Socials.map((social) => (
                   <Image
@@ -187,7 +187,7 @@ const page = () => {
               </div>
               <div className="flex flex-col opacity-70">
                 <span>Horaire de travail: 09h à 18h</span>
-                <span>Lundi à Samedi</span>
+                <span>Lundi à Vendredi</span>
               </div>
             </div>
           </div>

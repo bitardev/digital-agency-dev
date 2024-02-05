@@ -103,7 +103,7 @@ const FooterSection = () => {
             </ul>
           </div>
           <div
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-8 max-desktop:pr-8"
             data-aos="fade-up"
             data-aos-offset="200"
             data-aos-delay="350"

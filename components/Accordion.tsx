@@ -21,7 +21,6 @@ const Accordion = ({
           className="mb-5 pb-5 border-b border-b-gray-800 w-full"
           data-aos="fade-up"
           data-aos-duration="1000"
-          data-aos-delay={(index + 1) * 50}
           data-aos-offset="0"
           data-aos-easing="ease-in-out"
           data-aos-mirror="true"
@@ -35,7 +34,7 @@ const Accordion = ({
             }`}
             onClick={() => setCurrentActive(index)}
           >
-            <div className="flex justify-start items-center gap-10 w-full">
+            <div className="flex justify-start items-center gap-10 w-full max-mobile:gap-5">
               <div
                 className={`relative flex justify-center items-center transition-all ease-in-out duration-500 ${
                   currentActive === index ? "rotate-90" : ""
@@ -56,7 +55,7 @@ const Accordion = ({
                   }`}
                 />
               </div>
-              <span className="text-lg text-white font-semibold montserrat leading-snug">
+              <span className="text-lg text-white font-semibold montserrat leading-snug text-left max-mobile:text-sm">
                 {item.title}
               </span>
             </div>
