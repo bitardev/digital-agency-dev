@@ -1,3 +1,4 @@
+ /* eslint react/no-unescaped-entities */
 import BreadcrumbHeader from "@/components/BreadcrumbHeader";
 import ContactAddressCard from "@/components/ContactAddressCard";
 import HeadingPageSection from "@/components/HeadingPageSection";
