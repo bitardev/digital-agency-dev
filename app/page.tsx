@@ -8,7 +8,7 @@ import { Projects } from "@/constants";
 
 export default function Home() {
   return (
-    <main className="w-screen relative">
+    <main className="w-screen relative max-tablet:overflow-x-hidden">
       <HeroSection />
       {Projects.map((project, index) => (
         <FeaturedProjectSection
