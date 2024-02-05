@@ -13,7 +13,7 @@ const FooterSection = () => {
   return (
     <div className="w-screen">
       <ScrollTopBtn />
-      <div className="max-w-screen-2xl m-auto flex flex-col px-20 justify-start max-tablet:px-0">
+      <div className="max-w-screen-2xl m-auto flex flex-col px-20 justify-start max-tablet:px-0 max-desktop:px-24">
         <div className="flex justify-between items-start py-28 max-tablet:flex-col max-tablet:gap-14 max-tablet:px-11">
           <div
             className="flex flex-col gap-8"

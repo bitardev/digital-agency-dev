@@ -14,12 +14,11 @@ const HeadingSection = ({ title, subtitle }: Props) => {
         className="text-white text-3xl font-bold montserrat max-mobile:text-xl"
         data-aos="fade-right"
         data-aos-offset="200"
-        data-aos-delay="100"
+        data-aos-delay="0"
         data-aos-duration="500"
         data-aos-easing="ease-in-cubic"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top-bottom"
       >
         {title}
       </h3>
@@ -32,7 +31,6 @@ const HeadingSection = ({ title, subtitle }: Props) => {
         data-aos-easing="ease-in-cubic"
         data-aos-mirror="true"
         data-aos-once="false"
-        data-aos-anchor-placement="top-bottom"
       >
         {subtitle}
       </p>

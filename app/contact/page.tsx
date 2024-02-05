@@ -1,4 +1,4 @@
- /* eslint react/no-unescaped-entities */
+/* eslint react/no-unescaped-entities */
 import BreadcrumbHeader from "@/components/BreadcrumbHeader";
 import ContactAddressCard from "@/components/ContactAddressCard";
 import HeadingPageSection from "@/components/HeadingPageSection";
@@ -19,7 +19,17 @@ const page = () => {
           icon="/icon_24h.svg"
         />
         <div className="flex justify-between items-start w-full min-h-[500px] pt-11 max-tablet:flex-col">
-          <div className="w-full max-w-[60%] pr-14 container max-tablet:max-w-full max-tablet:pr-0">
+          <div
+            className="w-full max-w-[60%] pr-14 container max-tablet:max-w-full max-tablet:pr-0 max-desktop:pl-7"
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="0"
+            data-aos-offset="0"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-bottom"
+          >
             <div className="divide-y divide-gray-200">
               <form
                 autoComplete="off"
@@ -147,7 +157,17 @@ const page = () => {
               </form>
             </div>
           </div>
-          <div className="w-full h-full border-[1px] border-blue-500 rounded-xl px-11 flex flex-col gap-6 py-12 max-w-[40%] max-tablet:max-w-full max-tablet:mt-11 max-mobile:px-4 max-mobile:py-6">
+          <div
+            className="w-full h-full border-[1px] border-blue-500 rounded-xl px-11 flex flex-col gap-6 py-12 max-w-[40%] max-tablet:max-w-full max-tablet:mt-11 max-mobile:px-4 max-mobile:py-6"
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="500"
+            data-aos-offset="0"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-bottom"
+          >
             <span className="text-white font-bold monteserrat text-4xl">
               Dites Hello!
             </span>
@@ -194,7 +214,7 @@ const page = () => {
         </div>
       </div>
       <div className="w-screen bg-[rgba(255,255,255,0.02)] pt-20 mt-12 relative z-10">
-        <div className="w-full max-w-screen-2xl m-auto min-h-[500px] px-20 max-tablet:px-11">
+        <div className="w-full max-w-screen-2xl m-auto min-h-[500px] px-20 max-tablet:px-11 max-desktop:pl-28">
           <HeadingSection
             title="Nos branches affiliées"
             subtitle="Et tortor consequat id porta nibh venenatis cras sed felis. Pharetra diam sit amet nisl suscipit. Etiam dignissim diam quis enim lobortis scelerisque fermentum. Volutpat blandit aliquam etiam velit sceleris."
@@ -214,7 +234,13 @@ const page = () => {
         </div>
       </div>
       <div className="w-screen -mt-12 max-tablet:mt-12">
-        <Image src="/map_paris.webp" alt="Map" width={1440} height={415} className="w-screen mix-blend-luminosity" />
+        <Image
+          src="/map_paris.webp"
+          alt="Map"
+          width={1440}
+          height={415}
+          className="w-screen mix-blend-luminosity"
+        />
       </div>
     </>
   );

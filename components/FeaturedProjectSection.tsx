@@ -53,7 +53,7 @@ const FeaturedProjectSection = ({
             height={565}
             className="rounded-tl-md rounded-tr-[100px] rounded-bl-md rounded-br-md shadow-2xl"
           />
-          <span className="text-white opacity-10 text-[200px] font-extrabold absolute -bottom-12 left-0 leading-none max-mobile:text-[100px]">
+          <span className="text-white opacity-10 text-[200px] font-extrabold absolute -bottom-12 left-0 leading-none max-mobile:text-[100px] translate-x-[-60%]">
             {projectNum}
           </span>
         </div>
