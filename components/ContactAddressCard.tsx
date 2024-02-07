@@ -8,6 +8,7 @@ interface Props {
   address: string;
   tel: string;
   email: string;
+  mouseEnter: () => void
 }
 
 const ContactAddressCard = ({
@@ -16,7 +17,7 @@ const ContactAddressCard = ({
   address,
   tel,
   email,
-  ...rootDOMAttributes
+  mouseEnter
 }: Props) => {
   return (
     <div
@@ -29,7 +30,7 @@ const ContactAddressCard = ({
       data-aos-mirror="true"
       data-aos-once="false"
       data-aos-anchor-placement="top-bottom"
-      {...rootDOMAttributes}
+      onMouseEnter={mouseEnter}
     >
       <div className="flex flex-col gap-10">
         <span className="text-lg font-bold text-sky-500">{city}</span>
