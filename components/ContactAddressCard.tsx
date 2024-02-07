@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 interface Props {
@@ -8,7 +10,14 @@ interface Props {
   email: string;
 }
 
-const ContactAddressCard = ({ index, city, address, tel, email }: Props) => {
+const ContactAddressCard = ({
+  index,
+  city,
+  address,
+  tel,
+  email,
+  ...rootDOMAttributes
+}: Props) => {
   return (
     <div
       className="max-w-[300px] max-tablet:max-w-full flex-auto justify-between flex flex-col gap-10 border-[1px] px-10 py-14 border-sky-600 rounded-xl shadow-xl bg-gradient-to-b from-transparent to-black"
@@ -20,6 +29,7 @@ const ContactAddressCard = ({ index, city, address, tel, email }: Props) => {
       data-aos-mirror="true"
       data-aos-once="false"
       data-aos-anchor-placement="top-bottom"
+      {...rootDOMAttributes}
     >
       <div className="flex flex-col gap-10">
         <span className="text-lg font-bold text-sky-500">{city}</span>

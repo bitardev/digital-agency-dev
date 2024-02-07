@@ -272,17 +272,29 @@ export const ContactAddresses = [
         address: "1 Rue des Fossés Saint-Bernard, 75005 Paris, France",
         tel: "+33 1 40 51 38 38",
         email: "paris@mmo.agency",
+        position: {
+            lat: 48.8563855,
+            lng: 2.3464551,
+        }
     },
     {
         city: "Casablanca",
         address: "44 Bd d'Anfa, Casablanca 20000 Maroc",
         tel: "+212 5 36 51 38 38",
         email: "casablanca@mmo.agency",
+        position: {
+            lat: 33.569273,
+            lng: -7.625944,
+        }
     },
     {
         city: "Rabat",
         address: "44 Bd d'Anfa, Rabat 20000 Maroc",
         tel: "+212 5 21 51 38 38",
         email: "rabat@mmo.agency",
+        position: {
+            lat: 33.9919462,
+            lng: -6.8521352,
+        }
     },
 ]
