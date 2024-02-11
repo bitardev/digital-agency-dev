@@ -37,6 +37,8 @@ const page = () => {
             title="Pourquoi nous choisir"
             subtitle="Lorem ispum dolor"
           />
+        </div>
+        <div className="w-full px-20 max-w-screen-2xl m-auto max-tablet:px-0">
           <FeaturesSection features={FeaturesApropos} heading={false} />
         </div>
       </div>

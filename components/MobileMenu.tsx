@@ -18,7 +18,7 @@ const MobileMenu = ({ path }: Props) => {
       <button
         onClick={toggleMenu}
         title="Menu"
-        className="text-white hover:opacity-80 transition-opacity mix-blend-difference pt-2"
+        className="text-white hover:opacity-80 transition-opacity mix-blend-difference pt-2 mr-3"
       >
         <CiMenuFries size={35} color="white" />
       </button>
@@ -27,7 +27,7 @@ const MobileMenu = ({ path }: Props) => {
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="absolute right-4 top-5 flex justify-end items-center gap-5">
+        <div className="absolute right-12 top-12 flex justify-end items-center gap-5">
           <button
             type="button"
             title="light mode"

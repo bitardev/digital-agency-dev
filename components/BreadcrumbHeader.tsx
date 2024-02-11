@@ -15,7 +15,7 @@ const BreadcrumbHeader = ({ currentPage, parentPage }: Props) => {
       style={{ backgroundImage: "url(/bg_page.webp)" }}
     >
       <h2
-        className="text-white montserrat text-5xl font-bold mt-16 max-mobile:text-3xl relative z-10"
+        className="text-white montserrat text-5xl font-bold mt-16 max-mobile:text-3xl relative z-10 max-tablet:text-center max-tablet:px-5"
         data-aos="fade-up"
         data-aos-duration="1200"
         data-aos-offset="0"

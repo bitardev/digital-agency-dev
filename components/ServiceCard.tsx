@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import urlSlug from "url-slug";
 
 interface Props {
   icon: string;
@@ -12,7 +13,7 @@ interface Props {
 const ServiceCard = ({ icon, title, serviceUrl, btnText, index }: Props) => {
   return (
     <Link
-      href={serviceUrl}
+      href={`/services/${urlSlug(title)}`}
       className="group/service w-[30%] max-tablet:w-full min-h-[140px] flex flex-col justify-center items-center bg-[#F1FCFF] hover:bg-[#4892D6] pl-9 rounded-2xl relative max-mobile:px-4 max-mobile:min-h-[100px]"
       data-aos="fade-down"
       data-aos-offset="200"

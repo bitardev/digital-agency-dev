@@ -23,7 +23,7 @@ const page = () => {
         />
         <div className="flex justify-between items-start w-full min-h-[500px] pt-11 max-tablet:flex-col">
           <div
-            className="w-full max-w-[60%] pr-14 container max-tablet:max-w-full max-tablet:pr-0 max-desktop:pl-7"
+            className="w-full max-w-[60%] pr-14 container max-tablet:max-w-full max-tablet:pr-0 max-desktop:pl-7 max-tablet:pl-0"
             data-aos="fade-up"
             data-aos-duration="700"
             data-aos-delay="0"

@@ -14,7 +14,7 @@ interface Props {
 }
 const FAQSection = ({ title, subtitle, faq = [], heading = true }: Props) => {
   return (
-    <div className="w-full max-w-7xl m-auto py-20">
+    <div className="w-full max-w-7xl m-auto py-20 max-tablet:px-11">
       {heading ? (
         <HeadingSection
           title={title || ""}

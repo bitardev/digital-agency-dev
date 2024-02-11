@@ -27,10 +27,10 @@ const Navigation = () => {
   }, [path, isRouting]);
 
   return (
-    <div className="fixed z-[51] top-0 left-0 w-full max-mobile:w-screen px-12 mt-5 max-h-[60px] flex justify-center max-tablet:px-0">
+    <div className="fixed z-[51] top-0 left-0 w-full max-mobile:w-screen px-12 mt-5 max-h-[60px] flex justify-center max-tablet:px-0 max-tablet:mt-0 max-tablet:max-h-[100px]">
       {isRouting && <Transition />}
       <div
-        className="flex justify-between w-full rounded-xl items-center max-tablet:px-5 backdrop-blur-xl bg-[rgba(0,10,19,0.5)]"
+        className="flex justify-between w-full rounded-xl items-center max-tablet:px-5 backdrop-blur-xl bg-[rgba(0,10,19,0.5)] max-tablet:h-[100px]"
         data-aos="fade"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
