@@ -138,7 +138,7 @@ const FooterSection = () => {
         </div>
         <div className="flex justify-between items-center py-8 max-tablet:flex-col max-tablet:items-start max-tablet:gap-3 max-tablet:px-11 border-t border-t-[rgba(255,255,255,0.1)]">
           <span
-            className="montserrat text-xs text-white font-medium opacity-50 uppercase"
+            className="montserrat text-xs text-gray-400 font-medium opacity-50 uppercase"
             data-aos="fade-right"
             data-aos-delay="350"
             data-aos-duration="800"

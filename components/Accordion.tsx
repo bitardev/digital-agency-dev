@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { RxMinus, RxPlus } from "react-icons/rx";
 
 interface AccordionData {
-  title: string;
-  description: string;
+  question: string;
+  answer: string;
 }
 
 const Accordion = ({
@@ -15,7 +15,7 @@ const Accordion = ({
   const [currentActive, setCurrentActive] = useState<number | null>(0);
   return (
     <ul className="w-full">
-      {missionAndVision.map((item, index) => (
+      {missionAndVision.map(({question, answer}, index) => (
         <li
           key={index}
           className="mb-5 pb-5 border-b border-b-gray-800 w-full"
@@ -55,17 +55,17 @@ const Accordion = ({
                 />
               </div>
               <span className="text-lg text-white font-semibold montserrat leading-snug text-left max-mobile:text-sm">
-                {item.title}
+                {question}
               </span>
             </div>
             <p
-              className={`text-sm text-white font-normal montserrat leading-normal overflow-hidden text-left max-w-[445px] ${
+              className={`text-sm text-white font-normal montserrat leading-normal overflow-hidden text-left max-w-[90%] ${
                 currentActive === index
                   ? "opacity-70 h-auto translate-y-0 transition-all ease-in-out duration-700"
                   : "h-0 opacity-0 -translate-y-2"
               }`}
             >
-              {item.description}
+              {answer}
             </p>
           </button>
         </li>

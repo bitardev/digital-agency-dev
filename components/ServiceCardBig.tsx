@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineArrowOutward } from "react-icons/md";
+import urlSlug from "url-slug";
 
 interface Props {
   image: string;
@@ -32,7 +33,7 @@ const ServiceCardBig = ({
       data-aos-anchor-placement="top-bottom"
     >
       <Link
-        href={serviceUrl}
+        href={`/services/${urlSlug(title)}`}
         className="relative py-12 text-white flex flex-col justify-center items-center gap-14 group/service"
       >
         <div className="relative w-full flex justify-center items-center">

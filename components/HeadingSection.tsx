@@ -3,32 +3,30 @@ import React from "react";
 interface Props {
   title: string;
   subtitle: string;
+  reverse?: boolean;
+  line?: boolean;
+  subtitleColor?: string;
+  subtitleClassName?: string;
 }
 
-const HeadingSection = ({ title, subtitle }: Props) => {
+const HeadingSection = ({ title, subtitle, reverse, subtitleColor, line, subtitleClassName = 'text-xl font-light' }: Props) => {
   return (
     <div
-      className="flex flex-col gap-4"
+      className={`flex flex-col gap-4 ${reverse ? "flex-col-reverse":""}`}
     >
       <h3
         className="text-white text-3xl font-bold montserrat max-mobile:text-xl"
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-offset="200"
-        data-aos-delay="0"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-cubic"
         data-aos-mirror="true"
         data-aos-once="false"
       >
         {title}
       </h3>
       <p
-        className="text-white text-xl font-light montserrat max-tablet:text-lg max-mobile:text-sm"
-        data-aos="fade-right"
+        className={`text-white montserrat max-tablet:text-lg relative max-mobile:text-sm ${line ? "flex items-center justify-start gap-3 before:block before:bg-blue-300 before:content-[''] before:w-8 before:h-0.5":""} ${subtitleClassName}`}
+        data-aos="fade-up"
         data-aos-offset="200"
-        data-aos-delay="150"
-        data-aos-duration="500"
-        data-aos-easing="ease-in-cubic"
         data-aos-mirror="true"
         data-aos-once="false"
       >

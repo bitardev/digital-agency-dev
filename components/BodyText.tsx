@@ -1,16 +1,14 @@
 import React from "react";
 interface Props {
   text: string;
+  textClass?: string;
 }
-const BodyText = ({ text }: Props) => {
+const BodyText = ({ text, textClass = 'text-white' }: Props) => {
   return (
     <div
-      className="text-white text-lg font-normal opacity-70 max-mobile:text-sm"
-      data-aos="fade-down"
+      className={`text-lg font-normal max-mobile:text-sm ${textClass}`}
+      data-aos="fade-up"
       data-aos-offset="200"
-      data-aos-delay="100"
-      data-aos-duration="1000"
-      data-aos-easing="ease-in-cubic"
       data-aos-mirror="true"
       data-aos-once="false"
       data-aos-anchor-placement="top-bottom"
