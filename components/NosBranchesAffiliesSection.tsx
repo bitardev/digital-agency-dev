@@ -30,7 +30,7 @@ const NosBranchesAffiliesSection = () => {
         </div>
       </div>
       <div
-        className="w-screen -mt-6 max-tablet:mt-12"
+        className="w-screen mt-10 max-tablet:mt-12"
         data-aos="fade-up"
         data-aos-duration="700"
         data-aos-offset="0"
