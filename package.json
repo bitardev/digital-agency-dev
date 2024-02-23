@@ -18,6 +18,7 @@
     "react-animated-cursor": "^2.11.2",
     "react-countup": "^6.5.0",
     "react-dom": "^18",
+    "react-photo-view": "^1.2.4",
     "resend": "^3.1.0",
     "url-slug": "^4.0.1"
   },

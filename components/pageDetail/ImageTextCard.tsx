@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import HeadingSection from "../HeadingSection";
 import BodyText from "../BodyText";
+import ButtonOutline from "../ButtonOutline";
+import ButtonSolid from "../ButtonSolid";
 
 interface Props {
   imageOrientation?: string;
@@ -9,6 +11,9 @@ interface Props {
   title?: string;
   subtitle?: string;
   description?: string;
+  btnUrl?: string;
+  btnText?: string;
+  btnSolid?: boolean;
 }
 const ImageTextCard = ({
   imageOrientation,
@@ -16,6 +21,9 @@ const ImageTextCard = ({
   title,
   subtitle,
   description,
+  btnUrl,
+  btnText,
+  btnSolid,
 }: Props) => {
   return (
     <div className="w-full max-w-7xl m-auto py-20">
@@ -51,6 +59,16 @@ const ImageTextCard = ({
             subtitleClassName="uppercase font-normal text-md text-blue-300"
           />
           <BodyText text={description || ""} textClass="text-gray-300" />
+          {btnText && btnSolid ? (
+            <ButtonSolid url={btnUrl} text={btnText} />
+          ) : (
+            ""
+          )}
+          {btnText && !btnSolid ? (
+            <ButtonOutline url={btnUrl} text={btnText} />
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

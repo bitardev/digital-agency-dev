@@ -1,10 +1,10 @@
 import Link from "next/link";
 import React from "react";
 interface Props {
-  text: string;
-  url: string;
+  text?: string;
+  url?: string;
 }
-const ButtonSolid = ({ text, url }: Props) => {
+const ButtonSolid = ({ text = "Voir Plus", url = "/" }: Props) => {
   return (
     <Link
       href={url}

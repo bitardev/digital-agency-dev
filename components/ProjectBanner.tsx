@@ -23,11 +23,10 @@ const ProjectBanner = () => {
       >
         <div className="w-full max-w-[50%] flex flex-col justify-center items-start gap-4 max-tablet:max-w-full max-tablet:text-center">
           <h3 className="text-white font-bold montserrat max-w-md text-xl max-tablet:text-sm">
-            Nous aidons les entreprises à atteindre leurs objectifs et à
-            résoudre leurs problèmes.
+            Nous vous aidons à atteindre vos objectifs et à augmenter votre chiffre d'affaire grâce à notre collection des sites modèles.
           </h3>
           <div className="flex items-center justify-start gap-4 w-full max-tablet:justify-center max-tablet:py-2 max-mobile:flex-col">
-            <ButtonSolid url="/projets" text="Afficher toutes les projets" />
+            <ButtonSolid url="/services/site-vitrines-et-applications/models" text="Afficher toutes les modèles" />
             <ButtonOutline url="/contact" text="Contactez-nous" />
           </div>
         </div>

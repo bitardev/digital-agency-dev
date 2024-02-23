@@ -7,8 +7,12 @@ interface Props {
     name: string;
     url: string;
   };
+  servicePage?: {
+    name: string;
+    url: string;
+  };
 }
-const BreadcrumbHeader = ({ currentPage, parentPage }: Props) => {
+const BreadcrumbHeader = ({ currentPage, parentPage, servicePage }: Props) => {
   return (
     <div
       className="w-screen min-h-[300px] bg-cover flex flex-col justify-center items-center gap-4 relative before:content-[''] before:absolute before:w-full before:h-full before:bg-gradient-to-b before:from-transparent before:to-[#000a13]"
@@ -48,6 +52,18 @@ const BreadcrumbHeader = ({ currentPage, parentPage }: Props) => {
               className="text-sm text-white montserrat font-light"
             >
               {parentPage.name}
+            </Link>
+          </li>
+        ) : (
+          ""
+        )}
+        {servicePage ? (
+          <li className="after:block after:content-['/'] after:text-sm after:text-white text-white flex justify-center items-center gap-2">
+            <Link
+              href={servicePage.url}
+              className="text-sm text-white montserrat font-light"
+            >
+              {servicePage.name}
             </Link>
           </li>
         ) : (

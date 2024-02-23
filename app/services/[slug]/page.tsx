@@ -25,6 +25,9 @@ const page = ({ params }: { params: { slug: string } }) => {
                 title={setting.title}
                 subtitle={setting.subtitle}
                 description={setting.description}
+                btnSolid={setting.btnSolid}
+                btnText={setting.btnText}
+                btnUrl={setting.btnUrl}
               />
             ) : (
               ""
