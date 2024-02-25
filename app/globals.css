@@ -1,25 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@100;300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@800&family=Montserrat:wght@100;300;400;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   .montserrat {
-      font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
   .montserrat-alternates {
-      font-family: 'Montserrat Alternates', sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
   }
   .text-stroke {
-    -webkit-text-stroke: 1px #4892D6;
+    -webkit-text-stroke: 1px #4892d6;
     color: transparent;
   }
   .number-stroke {
-    -webkit-text-stroke: 1px #FFF;
+    -webkit-text-stroke: 1px #fff;
     color: transparent;
   }
   body {
     overflow-x: hidden;
-    background: #000A13;
+    background: #000a13;
+  }
+  html {
+    --cursor-color: #333;
+  }
+
+  html.dark-mode {
+    --cursor-color: #fff;
   }
 }

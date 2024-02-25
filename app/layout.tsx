@@ -7,7 +7,7 @@ import BookDemo from "@/components/BookDemo";
 import FooterSection from "@/components/FooterSection";
 import NextTopLoader from "nextjs-toploader";
 import AOSInit from "@/components/Aos";
-import AnimatedCursor from "react-animated-cursor"
+import AnimatedCursor from "react-animated-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AnimatedCursor />
+        <AnimatedCursor
+          innerSize={10}
+          outerSize={14}
+          color="14, 165, 233"
+          outerAlpha={1}
+          innerScale={0.7}
+          outerScale={4}
+          outerStyle={{
+            zIndex: "9999999999999",
+            mixBlendMode: "overlay",
+          }}
+        />
         <NextTopLoader color="#4892D6" showSpinner={false} />
         <Navbar />
         <AOSInit />

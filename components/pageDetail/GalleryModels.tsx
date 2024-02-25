@@ -4,6 +4,7 @@ import { groupBy } from "@/utils/helpers";
 import React, { useState } from "react";
 import ModelCardViewer from "../ModelCardViewer";
 import { PhotoProvider } from "react-photo-view";
+import { CiZoomIn, CiZoomOut } from "react-icons/ci";
 
 const GalleryModels = () => {
   const results = groupBy(SiteVitrineModels, (i) => i.category);
@@ -31,21 +32,43 @@ const GalleryModels = () => {
         ))}
       </div>
       <div className="w-full max-w-7xl p-5 pb-10 mx-auto mb-10 gap-5 grid grid-cols-3 py-20 max-tablet:grid-cols-1 max-tablet:gap-10">
-        {SiteVitrineModels.filter((s) =>
-          currentCategory === "All"
-            ? s.category !== "All"
-            : s.category === currentCategory
-        ).map((model, index) => (
-          <div className="relative group/model" key={`m_${index}`}>
-            <PhotoProvider>
+        <PhotoProvider
+          className="cursor-default"
+          toolbarRender={({ onScale, scale }) => {
+            return (
+              <>
+                <div className="flex justify-center gap-3 items-center mr-3">
+                  <CiZoomIn
+                    onClick={() => onScale(scale + 1)}
+                    size={30}
+                    className="cursor-pointer"
+                  />
+                  <CiZoomOut
+                    onClick={() => onScale(scale - 1)}
+                    size={30}
+                    className="cursor-pointer"
+                  />
+                </div>
+              </>
+            );
+          }}
+        >
+          {SiteVitrineModels.filter((s) =>
+            currentCategory === "All"
+              ? s.category !== "All"
+              : s.category === currentCategory
+          ).map((model, index) => (
+            <div className="relative group/model" key={`m_${index}`}>
               <ModelCardViewer
                 url={model.modelUrl}
                 thumbnailImage={model.imageThumbnail}
                 fullImage={model.imageLandingFull}
+                index={index}
+                previewUrl={model.previewUrl}
               />
-            </PhotoProvider>
-          </div>
-        ))}
+            </div>
+          ))}
+        </PhotoProvider>
       </div>
     </div>
   );
