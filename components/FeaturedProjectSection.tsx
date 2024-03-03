@@ -74,7 +74,7 @@ const FeaturedProjectSection = ({
           <p className="text-white text-sm montserrat font-light opacity-80">
             {description}
           </p>
-          <ButtonSolid url={projectUrl} text={btnText} />
+          <ButtonSolid url={projectUrl} text={btnText} targetType="_blank" />
         </div>
       </div>
     </div>

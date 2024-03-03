@@ -1,5 +1,4 @@
 import AboutSection from "@/components/AboutSection";
-import FeaturedProjectSection from "@/components/FeaturedProjectSection";
 import FeaturedWebSitesModels from "@/components/FeaturedWebSitesModels";
 import HeroSection from "@/components/HeroSection";
 import NumbersSection from "@/components/NumbersSection";
