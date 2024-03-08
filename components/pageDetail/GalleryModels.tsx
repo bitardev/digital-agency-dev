@@ -20,6 +20,7 @@ const GalleryModels = () => {
         {categories.map((c) => (
           <button
             type="button"
+            key={c}
             onClick={() => setCurrentCategory(c)}
             className={`text-xs font-bold  ${
               currentCategory === c
@@ -64,6 +65,7 @@ const GalleryModels = () => {
                 thumbnailImage={model.imageThumbnail}
                 fullImage={model.imageLandingFull}
                 index={index}
+                slug={model.slug}
                 previewUrl={model.previewUrl}
               />
             </div>

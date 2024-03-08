@@ -12,7 +12,7 @@ const FeaturedWebSitesModels = () => {
           image={model.imageThumbnail}
           description={model.description}
           btnText={model.btnText}
-          projectUrl={model.previewUrl}
+          projectUrl={`/templates/${model.slug}`}
           projectNum={`0${index + 1}`}
           imageOrientation={model.imageOrientation}
           lightBG={model.lightBG}

@@ -7,6 +7,7 @@ import "react-photo-view/dist/react-photo-view.css";
 
 interface Props {
   url: string;
+  slug?: string;
   fullImage: string;
   thumbnailImage: string;
   index: number;
@@ -18,6 +19,7 @@ const ModelCardViewer = ({
   fullImage,
   thumbnailImage,
   index,
+  slug,
   previewUrl,
 }: Props) => {
   return (
@@ -29,8 +31,7 @@ const ModelCardViewer = ({
           color="white"
         />
         <Link
-          href={previewUrl}
-          target="_blank"
+          href={`/templates/${slug}`}
           className="absolute delay-500 text-blue-950 bg-white px-4 py-2 shadow-md text-xs font-bold rounded-full z-10 opacity-0 will-change-transform translate-y-4 group-hover/model:opacity-100 transition-all duration-700 ease-in-out group-hover/model:translate-y-0 max-mobile:opacity-100"
         >
           Prévisualiser

@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AnimatedCursor
+        {/* <AnimatedCursor
           innerSize={10}
           outerSize={14}
           color="14, 165, 233"
@@ -35,7 +35,7 @@ export default function RootLayout({
             zIndex: "9999999999999",
             mixBlendMode: "overlay",
           }}
-        />
+        /> */}
         <NextTopLoader color="#4892D6" showSpinner={false} />
         <Navbar />
         <AOSInit />
