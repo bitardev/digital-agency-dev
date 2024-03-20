@@ -5,11 +5,16 @@ import BodyText from "./BodyText";
 
 interface Props {
   modelSlug: string;
+  telephone?: boolean;
+  onReturn: (arg0: string) => void;
 }
-const SignupForm = ({ modelSlug }: Props) => {
+const SignupForm = ({ modelSlug, telephone, onReturn }: Props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const handleRetourButtonClick = (buttonName: string) => {
+    onReturn(buttonName);
+  };
   return (
     <>
       <div className="divide-y divide-gray-200 w-full">
@@ -76,24 +81,45 @@ const SignupForm = ({ modelSlug }: Props) => {
                 Votre numéro de téléphone
               </label>
             </div>
+            {telephone ? (
+              ""
+            ) : (
+              <div className="relative">
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  inputMode="email"
+                  className="peer placeholder-transparent bg-transparent h-10 w-full border-b-2 border-gray-800 text-white focus:outline-none focus:border-sky-950"
+                  placeholder="Email address"
+                />
+                <label
+                  htmlFor="email"
+                  className="absolute left-0 -top-4 text-gray-400 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-0 transition-all peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
+                >
+                  Email Address
+                </label>
+              </div>
+            )}
             <div className="relative">
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autoComplete="off"
-                autoCapitalize="off"
-                inputMode="email"
-                className="peer placeholder-transparent bg-transparent h-10 w-full border-b-2 border-gray-800 text-white focus:outline-none focus:border-sky-950"
-                placeholder="Email address"
-              />
-              <label
-                htmlFor="email"
-                className="absolute left-0 -top-4 text-gray-400 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-0 transition-all peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
-              >
-                Email Address
-              </label>
-            </div>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  className="peer placeholder-transparent bg-transparent h-10 w-full border-b-2 border-gray-800 text-white focus:outline-none focus:border-sky-950"
+                  placeholder="Mot de passe"
+                />
+                <label
+                  htmlFor="password"
+                  className="absolute left-0 -top-4 text-gray-400 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-0 transition-all peer-focus:-top-3.5 peer-focus:text-gray-400 peer-focus:text-sm"
+                >
+                  Mot de passe
+                </label>
+              </div>
           </div>
           <div className="scale-75 origin-left opacity-40">
             <BodyText text="En créant un compte, vous acceptez nos Conditions d’utilisation et reconnaissez avoir lu et compris la Politique de confidentialité" />
@@ -101,6 +127,7 @@ const SignupForm = ({ modelSlug }: Props) => {
           <div className="relative flex justify-between items-center">
             <button
               type="button"
+              onClick={() => handleRetourButtonClick("Button1")}
               className="px-8 py-4 font-normal text-white bg-transparent hover:bg-[rgba(255,255,255,.05)] rounded-lg p-2 flex items-center gap-4 justify-center border border-[rgba(255,255,255,.1)]"
             >
               <HiArrowNarrowLeft />

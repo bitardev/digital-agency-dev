@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState, useRef } from "react";
 import { CiMobile1 } from "react-icons/ci";
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle, FaPhone, FaPhoneAlt } from "react-icons/fa";
 import { FaRegEnvelope } from "react-icons/fa6";
 import {
   HiArrowNarrowLeft,
@@ -14,6 +14,8 @@ import HeadingSection from "./HeadingSection";
 import BodyText from "./BodyText";
 import SignupForm from "./SignupForm";
 import Image from "next/image";
+import ContactForm from "./ContactForm";
+import DemandeDevis from "./DemandeDevis";
 
 interface Props {
   model: {
@@ -52,23 +54,38 @@ const TemplatePreview = ({ model, config }: Props) => {
     lightBG,
     category,
   } = model;
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showPreview, setShowPreview] = useState(true);
-  const [showSignup, setShowSignup] = useState(false);
+  const [showSignupEmail, setShowSignupEmail] = useState(false);
+  const [showSignupTelephone, setShowSignupTelephone] = useState(false);
   const [deviceMode, setDeviceMode] = useState("desktop");
   const [editMode, setEditMode] = useState(false);
+  const showQuoteFormPopup = () => {
+    setShowQuoteForm(true);
+    setShowPreview(false);
+  };
   const showLoginPopup = () => {
     setShowLogin(true);
     setShowPreview(false);
   };
-  const showSignupPopup = () => {
+  const showSignupEmailPopup = () => {
     setShowLogin(false);
-    setShowSignup(true);
+    setShowSignupEmail(true);
   };
-
+  const showSignupTelephonePopup = () => {
+    setShowLogin(false);
+    setShowSignupEmail(false);
+    setShowSignupTelephone(true);
+  };
   const activateEditMode = () => {
     setEditMode(true);
     console.log("editMode", editMode);
+  };
+  const handleReturn = (buttonName: string) => {
+    setShowLogin(true);
+    setShowSignupEmail(false);
+    setShowSignupTelephone(false);
   };
   return (
     <>
@@ -147,12 +164,19 @@ const TemplatePreview = ({ model, config }: Props) => {
                 continuer à personnaliser les styles, ajouter des
                 fonctionnalités et bien plus encore.
               </div>
-              <button
+              {/* <button
                 type="button"
                 onClick={showLoginPopup}
                 className="text-xs font-bold text-blue-950 bg-white hover:bg-slate-200 px-9 py-4 rounded-full max-tablet:px-4 max-tablet:py-2 w-full"
               >
                 COMMENCER AVEC CE DESIGN
+              </button> */}
+              <button
+                type="button"
+                onClick={showQuoteFormPopup}
+                className="text-xs font-bold text-blue-950 bg-white hover:bg-slate-200 px-9 py-4 rounded-full max-tablet:px-4 max-tablet:py-2 w-full"
+              >
+                JE VOUDRAIS CE DESIGN
               </button>
             </div>
             <div className="w-full flex justify-start pl-7">
@@ -189,27 +213,28 @@ const TemplatePreview = ({ model, config }: Props) => {
             </button>
           </div>
           <div className="w-full h-screen flex flex-col justify-center items-center">
-            <div className="flex flex-col max-w-3xl m-auto translate-y-[-40%]">
+            <div className="flex flex-col max-w-4xl m-auto translate-y-[-40%]">
               <HeadingSection title="Créer votre compte" subtitle="" />
               <div className="scale-90 origin-left opacity-70">
                 <BodyText text="En créant un compte, vous acceptez nos Conditions d’utilisation et reconnaissez avoir lu et compris la Politique de confidentialité" />
               </div>
-              <div className="w-full flex justify-between items-center py-10 gap-4">
+              <div className="w-full flex items-center py-10 gap-4">
                 <button
-                  title="Google"
+                  title="Téléphone"
                   type="button"
-                  className="text-white border border-gray-500 rounded-lg p-3 px-20 relative"
+                  onClick={showSignupTelephonePopup}
+                  className="text-gray-600 border border-gray-600 rounded-lg p-3 px-20 relative"
                 >
-                  <FaGoogle size={25} className="absolute left-5" />{" "}
-                  <span className="text-white text-lg font-normal flex gap-3 items-center">
-                    Continuer avec Google
+                  <FaPhoneAlt size={25} className="absolute left-5" />{" "}
+                  <span className="text-gray-200 text-lg font-normal flex gap-3 items-center">
+                    Continuer avec numéro de téléphone
                   </span>
                 </button>
                 <button
                   title="Email"
                   type="button"
-                  onClick={showSignupPopup}
-                  className="text-white border border-white rounded-lg p-3 px-20 relative"
+                  onClick={showSignupEmailPopup}
+                  className="text-gray-600 border border-gray-700 rounded-lg p-3 px-20 relative"
                 >
                   <FaRegEnvelope size={25} className="absolute left-5" />{" "}
                   <span className="text-white text-lg font-normal flex gap-3 items-center">
@@ -226,7 +251,7 @@ const TemplatePreview = ({ model, config }: Props) => {
       ) : (
         ""
       )}
-      {showSignup && !config ? (
+      {showSignupEmail && !config ? (
         <div className="w-screen min-h-screen cursor-default fixed left-0 top-0 z-[999999999] bg-[#000a13]">
           <div className="px-16 py-10 flex justify-between items-center">
             <Link
@@ -247,8 +272,69 @@ const TemplatePreview = ({ model, config }: Props) => {
           <div className="w-full h-screen flex flex-col justify-center items-center">
             <div className="flex flex-col max-w-lg m-auto -translate-y-[50px]">
               <HeadingSection title="Créer votre compte" subtitle="" />
-              <div className="w-full flex justify-between items-center py-10 gap-4 -translate-y-[30px]">
-                <SignupForm modelSlug={slug} />
+              <div className="w-full container flex justify-between items-center py-10 gap-4 -translate-y-[30px]">
+                <SignupForm
+                  modelSlug={slug}
+                  telephone={false}
+                  onReturn={handleReturn}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      {showQuoteForm && !config ? (
+        <div className="w-screen min-h-screen cursor-default fixed left-0 top-0 z-[999999999] bg-[#000a13]">
+          <div className="px-16 py-10 flex justify-between items-center">
+            <Link
+              href={"/services/site-vitrines-et-applications/models"}
+              className="text-white text-lg font-normal flex gap-3 items-center"
+            >
+              <HiArrowNarrowLeft />
+              Retour
+            </Link>
+          </div>
+          <div className="w-full h-screen flex flex-col justify-center items-center">
+            <div className="flex flex-col max-w-7xl m-auto -translate-y-[50px]">
+              {/* <HeadingSection title="Créer votre compte" subtitle="" /> */}
+              <div className="w-full container max-w-5xl flex justify-between items-center py-10 gap-4 -translate-y-[30px]">
+                <DemandeDevis templateName={name} />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      {showSignupTelephone && !config ? (
+        <div className="w-screen min-h-screen cursor-default fixed left-0 top-0 z-[999999999] bg-[#000a13]">
+          <div className="px-16 py-10 flex justify-between items-center">
+            <Link
+              href={"/services/site-vitrines-et-applications/models"}
+              className="text-white text-lg font-normal flex gap-3 items-center"
+            >
+              <HiArrowNarrowLeft />
+              Retour
+            </Link>
+            <button
+              title="Se connecter"
+              type="button"
+              className="text-white text-lg font-normal"
+            >
+              Se connecter
+            </button>
+          </div>
+          <div className="w-full h-screen flex flex-col justify-center items-center">
+            <div className="flex flex-col max-w-lg m-auto -translate-y-[50px]">
+              <HeadingSection title="Créer votre compte" subtitle="" />
+              <div className="w-full container flex justify-between items-center py-10 gap-4 -translate-y-[30px]">
+                <SignupForm
+                  modelSlug={slug}
+                  telephone={true}
+                  onReturn={handleReturn}
+                />
               </div>
             </div>
           </div>
