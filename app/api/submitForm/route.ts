@@ -2,11 +2,11 @@
 import { MongoClient } from "mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
+// export const config = {
+//   api: {
+//     bodyParser: false,
+//   },
+// };
 export async function POST(req: Request, res: NextApiResponse) {
   const body = await req.json();
   const timestamp = new Date();
