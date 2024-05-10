@@ -6,6 +6,16 @@ import { Services } from "@/constants";
 import React from "react";
 import urlSlug from "url-slug";
 
+export function generateStaticParams() {
+  return [
+    { slug: urlSlug("Site vitrine et applications") },
+    { slug: urlSlug("Réseau sociaux") },
+    { slug: urlSlug("Maintenance applicative") },
+    { slug: urlSlug("Ecommerce") },
+    { slug: urlSlug("Intelligence artificielle") },
+    { slug: urlSlug("Sourcing") },
+  ];
+}
 const page = ({ params }: { params: { slug: string } }) => {
   const service =
     Services.find((s) => urlSlug(s.title) === params.slug) ?? undefined;

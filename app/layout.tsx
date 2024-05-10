@@ -8,6 +8,7 @@ import FooterSection from "@/components/FooterSection";
 import NextTopLoader from "nextjs-toploader";
 import AOSInit from "@/components/Aos";
 import AnimatedCursor from "react-animated-cursor";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <AnimatedCursor
+        <Providers>
+          {/* <AnimatedCursor
           innerSize={10}
           outerSize={14}
           color="14, 165, 233"
@@ -36,13 +38,14 @@ export default function RootLayout({
             mixBlendMode: "overlay",
           }}
         /> */}
-        <NextTopLoader color="#4892D6" showSpinner={false} />
-        <Navbar />
-        <AOSInit />
-        {children}
-        <Navigation />
-        <BookDemo />
-        <FooterSection />
+          <NextTopLoader color="#4892D6" showSpinner={false} />
+          <Navbar />
+          <AOSInit />
+          {children}
+          <Navigation />
+          <BookDemo />
+          <FooterSection />
+        </Providers>
       </body>
     </html>
   );
